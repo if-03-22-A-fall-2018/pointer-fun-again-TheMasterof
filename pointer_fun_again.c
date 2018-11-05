@@ -15,15 +15,23 @@ void change_string(char string1[],char* p_string);
 int main(int argc, char const *argv[]) {
   struct Playstruct play_struct;
   struct Playstruct* play_struct_pointer=&play_struct;
+  char another_string[16]="Hello_World";
+  char* another_string_pointer=&another_string;
+
 
   print_struct(play_struct,play_struct_pointer);
   change_struct(play_struct,play_struct_pointer);
+  print_string(play_struct.a_string);
+  change_string(play_struct.a_string,another_string_pointer);
+  print_string(play_struct.a_string);
+  print_string(another_string);
+  //both strings got cut because of the /0
 
   return 0;
 }
 void print_struct(struct Playstruct ps, struct Playstruct* pps){
-  printf("`Values of struct ps: <d>, <lf>, <s>\n",ps.int_value, ps.double_value ,ps.a_string);
-  printf("`Values of struct ps: <d>, <lf>, <s>\n",pps.int_value, pps.double_value ,pps.a_string);
+  printf("`Values of struct ps: %d, %lf, %s\n",ps.int_value, ps.double_value ,ps.a_string);
+  printf("`Values of struct ps: %d, %lf, %s\n",pps->int_value,pps->double_value,pps->a_string);
 }
 
 void change_struct(struct Playstruct ps, struct Playstruct* pps){
