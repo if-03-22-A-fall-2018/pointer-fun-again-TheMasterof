@@ -1,3 +1,13 @@
+/************************************************************
+* Programmname:	Pointer_fun_again	                          				*
+* Autor: 				Marcel Plakolb                      *
+* Klasse:				2AHIF                               *
+* Datum:				1.1.2018                          		*
+* ----------------------------------------------------------*
+*Kurzbeschreibung:                                          *
+*Bereits in Pointerfun             												*
+*************************************************************
+*/
 #include <stdio.h>
 
 struct Playstruct{
@@ -21,6 +31,8 @@ int main(int argc, char const *argv[]) {
 
   print_struct(play_struct,play_struct_pointer);
   change_struct(play_struct,play_struct_pointer);
+  //The new values are those which are changed with the pointer
+
   print_string(play_struct.a_string);
   change_string(play_struct.a_string,another_string_pointer);
   print_string(play_struct.a_string);
